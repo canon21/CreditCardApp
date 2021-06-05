@@ -1,6 +1,15 @@
 <form [formGroup]="cardForm">
     <!-- l'input si binda alla key presente in cardForm :O-->
     <input formControlName="name"/>
+    <!-- Per controllare se l'oggetto errors non è null. È veramente brutto-->
+    <ng-container *ngIf="cardForm.controls.name.errors">
+        <div *ngIf="cardForm.controls.name.errors.required">
+            Value is required.
+        </div>
+        <div *ngIf="cardForm.controls.name.errors.minlength">
+            Value must be longer (min {{ cardForm.controls.name.errors.minlength.requiredLength }}).
+        </div>
+    </ng-container>
 </form>
 
 <!--per debug-->
