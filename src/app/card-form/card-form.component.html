@@ -1,6 +1,9 @@
 <form [formGroup]="cardForm">
     <!-- cardForm.get('name') is equivalent to cardForm.controls.name-->
     <app-input [control] = "cardForm.get('name')" label = "Name"></app-input>
+    <app-input [control] = "cardForm.get('cardNumber')" label = "Card Number"></app-input>
+    <app-input [control] = "cardForm.get('expiration')" label = "Expiration"></app-input>
+    <app-input [control] = "cardForm.get('securityCode')" label = "Security Code"></app-input>
 </form>
 <hr/>
 <br/>
