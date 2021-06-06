@@ -4,6 +4,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 //FormGroup fa riferimento a tutti i campi del form che devono essere validati o submittati.
 //FormControl gestisce il singolo field.
 
+
+//custom formControl
+import { DateFormControl } from '../date-form-control';
+
 @Component({
   selector: 'app-card-form',
   templateUrl: './card-form.component.html',
@@ -16,7 +20,7 @@ export class CardFormComponent implements OnInit {
     { 
       name: new FormControl(/*Default value*/ '' , [Validators.required, Validators.minLength(3)]),
       cardNumber: new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(16)]),
-      expiration: new FormControl('', [Validators.required, Validators.pattern(/^(0[0-9]|1[0-2])\/\d{2}$/)]),
+      expiration: new DateFormControl('', [Validators.required, Validators.pattern(/^(0[0-9]|1[0-2])\/\d{2}$/)]),
       securityCode: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3)])
   });
 
