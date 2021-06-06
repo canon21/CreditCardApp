@@ -2,10 +2,12 @@
 <div class="field">
     <label class="label" *ngIf="label">{{ label }}</label>
     <div class="control">
+        <!-- Fast Example of librarie ngx-mask, deleting it. -->
         <input 
             class="input" 
             [ngClass] = "{ 'is-danger': showErrors() } "
             [formControl]="control" 
+            mask="(000)-000-0000"
         />
     </div>
     <ng-container *ngIf="showErrors()">
