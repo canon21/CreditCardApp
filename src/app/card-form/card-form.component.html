@@ -2,7 +2,7 @@
     <!-- l'input si binda alla key presente in cardForm :O-->
     <input formControlName="name"/>
     <!-- Per controllare se l'oggetto errors non è null. È veramente brutto-->
-    <ng-container *ngIf="cardForm.controls.name.errors">
+    <ng-container *ngIf="cardForm.controls.name.dirty && cardForm.controls.name.touched && cardForm.controls.name.errors">
         <div *ngIf="cardForm.controls.name.errors.required">
             Value is required.
         </div>
@@ -11,8 +11,9 @@
         </div>
     </ng-container>
 </form>
-
-<!--per debug-->
+<br/>
+<br/>
+<!--per debug -->
 <div>
     Form contents: {{ cardForm.value | json }}
 </div>
