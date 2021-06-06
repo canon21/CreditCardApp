@@ -13,7 +13,11 @@ export class CardFormComponent implements OnInit {
 
   cardForm = new FormGroup( 
     { 
-      name: new FormControl(/*Default value*/ '', [Validators.required, Validators.minLength(3)])
+      name: new FormControl(/*Default value*/ '' , 
+      [ 
+        Validators.required, 
+        Validators.minLength(3), 
+      ])
   
   });
 
