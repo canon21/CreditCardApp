@@ -4,6 +4,11 @@ export class DateFormControl extends FormControl {
 
     //override
     setValue(value: string, options: any) {
+        //se è null -> per reset.
+        if(!value){
+            super.setValue('', { ...options, emitModelToViewChange: true });
+            return;
+        }
 
         if (value.match(/[^0-9|\/]/gi) || value.length > 5) {
             super.setValue(this.value, { ...options, emitModelToViewChange: true });
